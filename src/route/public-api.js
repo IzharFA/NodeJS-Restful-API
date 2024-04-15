@@ -9,4 +9,4 @@ publicRouter.get('/ping', healthController.ping);
 
 export {
     publicRouter
-}
+}  

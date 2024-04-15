@@ -1,6 +1,6 @@
 import supertest from "supertest";
-import {web} from "../src/application/web.js";
-import {logger} from "../src/application/logging.js";
+import {web} from "../src/app/web.js";
+import {logger} from "../src/app/logging.js";
 import {createTestUser, getTestUser, removeTestUser} from "./test-util.js";
 import bcrypt from "bcrypt";
 
@@ -10,7 +10,7 @@ describe('POST /api/users', function () {
         await removeTestUser();
     })
 
-    it('should can register new user', async () => {
+    test('should can register new user', async () => {
         const result = await supertest(web)
             .post('/api/users')
             .send({
@@ -21,7 +21,7 @@ describe('POST /api/users', function () {
 
         expect(result.status).toBe(200);
         expect(result.body.data.ID).toBe(9699);
-        expect(result.body.data.name).toBe("test");
+        expect(result.body.data.name).toBe("Izanami");
         expect(result.body.data.NIK).toBeUndefined();
     });
 
@@ -53,7 +53,7 @@ describe('POST /api/users', function () {
 
         expect(result.status).toBe(200);
         expect(result.body.data.ID).toBe(9699);
-        expect(result.body.data.name).toBe(21221);
+        expect(result.body.data.name).toBe("Izanami");
         expect(result.body.data.NIK).toBeUndefined();
 
         result = await supertest(web)

@@ -5,7 +5,7 @@ import {
     registerUserValidation,
     updateUserValidation
 } from "../validation/user-validation.js";
-import {prismaClient} from "../application/database.js";
+import {prismaClient} from "../app/database.js";
 import {ResponseError} from "../error/response-error.js";
 import bcrypt from "bcrypt";
 import {v4 as uuid} from "uuid";

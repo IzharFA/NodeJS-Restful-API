@@ -11,7 +11,7 @@ datasource db {
 }
 
 model User {
-  Id_user  Int       @id @db.Int()
+  ID       Int       @id @db.Int()
   NIK      Int       @db.Int()
   name     String    @db.VarChar(100)
   token    String?   @db.VarChar(100)

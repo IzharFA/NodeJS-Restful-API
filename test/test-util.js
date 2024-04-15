@@ -1,10 +1,10 @@
-import {prismaClient} from "../src/application/database.js";
+import {prismaClient} from "../src/app/database.js";
 import bcrypt from "bcrypt";
 
 export const removeTestUser = async () => {
     await prismaClient.user.deleteMany({
         where: {
-            username: "test"
+            id_user:9699
         }
     })
 }
@@ -13,7 +13,7 @@ export const createTestUser = async () => {
     await prismaClient.user.create({
         data: {
             ID: 9699,
-            NIK: await bcrypt.hash(21221, 10),
+            NIK: await bcrypt.hash(Izanami, 10),
             name: "test",
             token: "test"
         }
@@ -23,7 +23,7 @@ export const createTestUser = async () => {
 export const getTestUser = async () => {
     return prismaClient.user.findUnique({
         where: {
-            ID: 9699
+            id_user:ID 
         }
     });
 }
